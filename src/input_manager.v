@@ -29,12 +29,12 @@ module input_manager(
     output reg         move_left_p1_o,
     output reg         move_right_p1_o,
     output reg         attack_p1_o,
-	
-	output reg			select_p1_o,
+    output reg	       select_p1_o,
 	
     output reg         move_left_p2_o,
     output reg         move_right_p2_o,
     output reg         attack_p2_o,
+    output reg	       select_p2_o,
 
     // Cleaned FPGA switch controls (debug/mode)
     output reg         show_hitboxes_o,
@@ -101,7 +101,7 @@ always_comb begin
         `ACT_LEFT:   move_left_p1_o  = 1'b1;
         `ACT_RIGHT:  move_right_p1_o = 1'b1;
         `ACT_ATTACK: attack_p1_o     = 1'b1;
-		`SELECT:	 select_p1_o	 = 1'b1;
+	`SELECT:     select_p1_o     = 1'b1;
         default: ;
     endcase
 
@@ -110,7 +110,7 @@ always_comb begin
         `ACT_LEFT:   move_left_p2_o  = 1'b1;
         `ACT_RIGHT:  move_right_p2_o = 1'b1;
         `ACT_ATTACK: attack_p2_o     = 1'b1;
-		`SELECT:	 select_p1_o	 = 1'b0;
+	`SELECT:     select_p2_o     = 1'b0;
         default: ;
     endcase
 end
